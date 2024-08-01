@@ -8,3 +8,7 @@ class Article(models.Model):
 class Comment(models.Model):
     content = models.TextField()
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
+
+# models.ForeignKey는
+# Comment 모델에는 article_id
+# Article 모델에는 comment_set을 자동으로 생성

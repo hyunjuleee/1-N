@@ -57,3 +57,9 @@ def comment_create(request, article_id):
             return redirect('articles:detail', id=article_id)
     else:
         return redirect('articles:index')
+
+def comment_delete(request, article_id, id):
+    if request.method == 'POST':
+        comment = Comment.objects.get(id=id)
+        comment.delete()
+    return redirect('articles:detail', id=article_id)

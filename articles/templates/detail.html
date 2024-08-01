@@ -10,8 +10,12 @@
         {{form}}
         <input type="submit">
     </form>
-    
+    <p>댓글 출력 방법 1</p>
     {% for comment in article.comment_set.all %}
+        <li>{{comment.content}}</li>
+    {% endfor %}
+    <p>댓글 출력 방법 2</p>
+    {% for comment in comments %}
         <li>{{comment.content}}</li>
     {% endfor %}
 {% endblock %}
